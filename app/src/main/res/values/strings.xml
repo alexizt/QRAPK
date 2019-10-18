@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QRC</string>
+    <string name="CANT_CONNECT">Impossibile stabilire connessione con il server</string>
 </resources>

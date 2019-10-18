@@ -52,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                                      @Override
                                      public void onReceivedError( WebView view, int errorCode, String description, String failingUrl)
                                      {
-                                         String msg="description error" + description;
+                                         //String msg="description error" + description;
+                                         String msg=getString(R.string.CANT_CONNECT);
                                          System.out.println("description error" + description);
                                          Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
                                          //view.setVisibility( View.GONE );
