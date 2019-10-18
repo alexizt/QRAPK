@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        body {
+            background-color: black;
+        }
+
+        html,
+        body,
+        #dv {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #main {
+            padding-top: 100px;
+        }
+
+        #btnInizia {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img style="height: 40%;" src="logo.svg" alt="">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12  text-center">
+                <button id="btnInizia" class="btn btn-primary btn-lg">Inizia</button>
+            </div>
+        </div>
+        <div  class="row" style="display: none;">
+            <div class="col-md-12  text-center">
+                <input type="button" class="btn btn-primary btn-lg" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+                <br /><br />
+                <input type="button" class="btn btn-primary btn-lg" value="Show Version" onClick="showVersion('called within the html')" />
+                <br /><br />
+                <p id="version" style="color: white;"></p>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        function showAndroidToast(toast) {
+            AndroidInterface.showToast(toast);
+        }
+
+        function showVersion(msg) {
+            var myVar = AndroidInterface.getAndroidVersion();
+            document.getElementById("version").innerHTML = msg + " You are running API Version " + myVar;
+        }
+
+        $(function () {
+            $('#btnInizia').click(
+                function () {
+                    //AndroidInterface.showToast(window.location.href);
+                    window.location.href = 'http://192.168.1.200:8081/Prelievo';
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
