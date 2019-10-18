@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <title>Tecnokar</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <style>
         body {
@@ -20,7 +21,14 @@
         }
 
         #btnInizia {
-            margin-top: 20px;
+            margin-top: 100px;
+            position: relative;
+            opacity: 0;
+        }
+
+        #logo {
+            height: 40%;
+            opacity: 0;         
         }
     </style>
 </head>
@@ -29,7 +37,7 @@
     <div id="main" class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
-                <img style="height: 40%;" src="logo.svg" alt="">
+                <img id="logo" src="logo.svg" alt="">
             </div>
         </div>
         <div class="row">
@@ -47,6 +55,7 @@
             </div>
         </div>
     </div>
+
     <script src="jquery-3.4.1.min.js"></script>
     <script>
         function showAndroidToast(toast) {
@@ -58,7 +67,25 @@
             document.getElementById("version").innerHTML = msg + " You are running API Version " + myVar;
         }
 
+        function showButton() {
+            $('button').animate({
+                    'top': '0px',
+                    'opacity': 100
+                },{
+            duration: 300,
+            easing: "swing"
+            })
+        }
+
         $(function () {
+            var bodyHeight=$('body').height();
+
+            $('#btnInizia').css({'top' : bodyHeight + 'px'})
+
+            $('#logo').animate(
+                {'opacity': 10},500, "swing", showButton
+            );
+
             $('#btnInizia').click(
                 function () {
                     //AndroidInterface.showToast(window.location.href);
@@ -66,6 +93,8 @@
                 }
             );
         });
+
+
     </script>
 </body>
 

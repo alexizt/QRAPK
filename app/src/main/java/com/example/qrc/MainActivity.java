@@ -4,14 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.JavascriptInterface;
-import android.webkit.ValueCallback;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import 	android.graphics.drawable.ColorDrawable;
@@ -82,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         alertDialog = alertDialogBuilder.create();
     }
 
+/*
     private boolean isNetworkConnected(String url) {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo ni = cm.getActiveNetworkInfo();
@@ -93,4 +89,6 @@ public class MainActivity extends AppCompatActivity {
             webview.loadUrl( "javascript:window.location.reload( true )" );
         return true;
     }
+*/
+
 }
