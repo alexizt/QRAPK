@@ -12,7 +12,7 @@ import android.webkit.WebViewClient;
 import 	android.graphics.drawable.ColorDrawable;
 import 	android.graphics.Color;
 import android.widget.Toast;
-
+import android.view.View;
 public class MainActivity extends AppCompatActivity {
 
     private WebView webview;
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         webview = findViewById(R.id.webView);
         webview.setBackgroundColor(Color.BLACK);
-        webview.addJavascriptInterface(new JavaScriptInterface(this), "AndroidInterface"); // To call methods in Android from using js in the html, AndroidInterface.showToast, AndroidInterface.getAndroidVersion etc
+        webview.addJavascriptInterface(new JavaScriptInterface(this, this), "AndroidInterface"); // To call methods in Android from using js in the html, AndroidInterface.showToast, AndroidInterface.getAndroidVersion etc
         webview.setWebViewClient(new WebViewClient()
                                  {
                                      @Override

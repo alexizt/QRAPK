@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.NoActionBar"
+    android:windowSoftInputMode="stateAlwaysHidden"
     tools:context=".MainActivity">
 
     <WebView
+        android:windowSoftInputMode="stateAlwaysHidden"
         android:id="@+id/webView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
